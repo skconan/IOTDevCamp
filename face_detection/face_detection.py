@@ -2,7 +2,6 @@
 import os
 import cv2
 import time
-import cv2 as cv
 import numpy as np
 
 # Define paths
@@ -13,11 +12,11 @@ caffemodel_path = os.path.join('/home/pi/IOTDevCamp/face_detection/model_data/we
 model = cv2.dnn.readNetFromCaffe(prototxt_path, caffemodel_path)
 
 # Loop through all images and strip out faces
-cap = cv.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
 # Set image size from camera
-cap.set(3, 1080)
-cap.set(4, 720)
+cap.set(3, 640)
+cap.set(4, 480)
 
 while True:
 	# Read image from camera
@@ -30,8 +29,8 @@ while True:
 		break
 
 	# Create blur image
-	frame_blur_bg = frame.copy()
-	frame_blur_bg = cv.blur(frame_blur_bg, (21,21))
+	# frame_blur_bg = frame.copy()
+	# frame_blur_bg = cv2.blur(frame_blur_bg, (21,21))
 
 	# Get height and width of image
 	(h, w) = frame.shape[:2]
@@ -51,18 +50,19 @@ while True:
 
 		confidence = detections[0, 0, i, 2]
 
-		if (confidence > 0.8):
-									
+		if (confidence > 0.8):				
 			# frame_blur_bg[startY:endY, startX:endX] = frame[startY:endY, startX:endX].copy()
 			
-			cv.putText(frame, '%.2f'%(confidence*100), (startX, startY-10), cv.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2, cv.LINE_AA)
-			cv.rectangle(frame, (startX, startY), (endX, endY), (0,255,0),2)
-			# cv.putText(frame_blur_bg, '%.2f'%(confidence*100), (startX, startY-10), cv.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2, cv.LINE_AA)
-			# cv.rectangle(frame_blur_bg, (startX, startY), (endX, endY), (0,255,0),2)
+			cv2.putText(frame, '%.2f'%(confidence*100), (startX, startY), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2, cv2.LINE_AA)
+			cv2.rectangle(frame, (startX, startY), (endX, endY), (0,255,0),2)
+			# cv2.putText(frame_blur_bg, '%.2f'%(confidence*100), (startX, startY), cv.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2, cv2.LINE_AA)
+			# cv2.rectangle(frame_blur_bg, (startX, startY), (endX, endY), (0,255,0),2)
 
-	cv.imshow('image', cv2.resize(frame,None,fx=.5, fy=.5))
-	# cv.imshow('image', cv2.resize(frame_blur_bg,None,fx=.5, fy=.5))
+	cv2.imshow('image', cv2.resize(frame,None,fx=.5, fy=.5))
+	# cv2.imshow('image', cv2.resize(frame_blur_bg,None,fx=.5, fy=.5))
 	
-	k = 0xff & cv.waitKey(10)
+	k = 0xff & cv2.waitKey(10)
 	if k == ord('q'):
 		break
+
+cv2.destroyAllWindows()
