@@ -63,10 +63,10 @@ while True:
 
             # Drawing the prediction and bounding box
 			label = "{}: {:.2f}%".format(labels[idx], confidence * 100)
-			cv2.rectangle(frame, (startX, startY), (endX, endY), colors[idx], 2)
+			cv2.rectangle(frame, (startX, startY), (endX, endY), (0,0,255), 2)
 			
 			y = startY - 15 if startY - 15 > 15 else startY + 15
-			cv2.putText(frame, label, (startX, y),cv2.FONT_HERSHEY_SIMPLEX, 0.5, colors[idx], 2)
+			cv2.putText(frame, label, (startX, y),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255), 2)
 
 	cv2.imshow("Frame", frame)
 	key = cv2.waitKey(10) & 0xFF
