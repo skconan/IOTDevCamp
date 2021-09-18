@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('images/qrcode2.jpg')
+img = cv2.imread('../images/qrcode2.jpg')
 
 plt.figure()
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
