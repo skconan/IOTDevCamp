@@ -59,8 +59,8 @@ while True:
 			# cv2.putText(frame_blur_bg, '%.2f'%(confidence*100), (startX, startY), cv.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2, cv2.LINE_AA)
 			# cv2.rectangle(frame_blur_bg, (startX, startY), (endX, endY), (0,255,0),2)
 
-	cv2.imshow('image', cv2.resize(frame,None,fx=.5, fy=.5))
-	# cv2.imshow('image', cv2.resize(frame_blur_bg,None,fx=.5, fy=.5))
+	cv2.imshow('image', frame)
+	# cv2.imshow('image', frame_blur_bg)
 	
 	k = 0xff & cv2.waitKey(10)
 	if k == ord('q'):
