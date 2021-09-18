@@ -14,3 +14,4 @@ for obj in decodedObjects:
 
 cv2.imshow('barcode', img)
 cv2.waitKey(0)
+cv2.destroyAllWindows()
