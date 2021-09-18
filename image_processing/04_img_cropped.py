@@ -2,7 +2,7 @@ import cv2		# เรียกใช้ library OpenCV
 import numpy as np		# เรียกใช้ library Numpy
 
 # อ่านไฟล์รูปจาก path แล้วเก็บในตัวแปร img
-img = cv2.imread('./images/test_img.png')
+img = cv2.imread('../images/test_img.png')
 # เก็บค่าความสูง, ความกว้าง, channel ไว้ในตัวแปร row, col, ch ตามลำดับ
 row, col, ch = img.shape
 

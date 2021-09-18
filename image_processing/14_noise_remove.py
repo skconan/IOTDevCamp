@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('./images/img_noise.png')
+img = cv2.imread('../images/img_noise.png')
 
 cv2.imshow('img', img)
 avg_blur = cv2.blur(img, (5, 5))

@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('./images/test_img.png')
+img = cv2.imread('../images/test_img.png')
 
 print(img.shape)
 

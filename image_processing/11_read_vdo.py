@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture('./images/cargo_drone.mp4')
+cap = cv2.VideoCapture('../images/cargo_drone.mp4')
 
 while(True):
     

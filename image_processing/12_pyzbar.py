@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import pyzbar.pyzbar as pyzbar
 
-img = cv2.imread('./images/barcode.png')
+img = cv2.imread('../images/barcode.png')
 
 
 decodedObjects = pyzbar.decode(img)

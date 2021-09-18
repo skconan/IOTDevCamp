@@ -15,7 +15,7 @@ def saltAndPepper(img, occurRate):
     out[coords] = 0
     return out
 
-img = cv2.imread('./images/test_img.png', 0)
+img = cv2.imread('../images/test_img.png', 0)
 img_sp = saltAndPepper(img.copy(), 0.05)
 
 cv2.imwrite("img_noise.png", img_sp)
