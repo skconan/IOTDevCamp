@@ -8,8 +8,8 @@ labels = ["background", "aeroplane", "bicycle", "bird", "boat", "bottle", "bus",
 colors = np.random.uniform(0, 255, size=(len(labels), 3))
 
 # Define paths
-prototxt_path = '/home/pi/IOTDevCamp/object_detection/model_data/SSD_MobileNet_prototxt.txt'
-caffemodel_path = '/home/pi/IOTDevCamp/object_detection/model_data/SSD_MobileNet.caffemodel'
+prototxt_path = '../object_detection/model_data/SSD_MobileNet_prototxt.txt'
+caffemodel_path = '../object_detection/model_data/SSD_MobileNet.caffemodel'
 
 # Read the model
 model = cv2.dnn.readNetFromCaffe(prototxt_path, caffemodel_path)

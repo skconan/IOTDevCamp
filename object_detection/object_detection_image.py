@@ -8,14 +8,14 @@ labels = ["background", "aeroplane", "bicycle", "bird", "boat", "bottle", "bus",
 colors = np.random.uniform(0, 255, size=(len(labels), 3))
 
 # Define paths
-prototxt_path = './object_detection/model_data/SSD_MobileNet_prototxt.txt'
-caffemodel_path = './object_detection/model_data/SSD_MobileNet.caffemodel'
+prototxt_path = '../object_detection/model_data/SSD_MobileNet_prototxt.txt'
+caffemodel_path = '../object_detection/model_data/SSD_MobileNet.caffemodel'
 
 # Read the model
 model = cv2.dnn.readNetFromCaffe(prototxt_path, caffemodel_path)
 
 # Read image
-frame = cv2.imread('./object_detection/test1.jpg')
+frame = cv2.imread('../object_detection/test1.jpg')
 
 # Get height and width of image
 (h, w) = frame.shape[:2]

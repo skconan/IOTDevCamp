@@ -5,8 +5,8 @@ import time
 import numpy as np
 
 # Define paths
-prototxt_path = os.path.join('/home/pi/IOTDevCamp/face_detection/model_data/deploy.prototxt')
-caffemodel_path = os.path.join('/home/pi/IOTDevCamp/face_detection/model_data/weights.caffemodel')
+prototxt_path = os.path.join('../face_detection/model_data/deploy.prototxt')
+caffemodel_path = os.path.join('../face_detection/model_data/weights.caffemodel')
 
 # Read the model
 model = cv2.dnn.readNetFromCaffe(prototxt_path, caffemodel_path)
